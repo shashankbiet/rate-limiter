@@ -1,0 +1,6 @@
+ENVIRONMENT: "dev"
+APP_NAME: "rate-limiter"
+HTTP_SERVER:
+    PORT: 3001
+GRPC_SERVER:
+    PORT: 9001

@@ -1,0 +1,12 @@
+version: '3.9'
+
+services:
+  rate-limiter:
+    build: ./
+    container_name: rate-limiter
+    environment:
+      - APP_NAME=rate-limiter
+      - ENVIRONMENT=dev
+    ports:
+      - 3001:3001
+      - 9001:9001

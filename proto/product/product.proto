@@ -1,0 +1,28 @@
+syntax="proto3";
+
+option go_package = "github.com/shashankbiet/rate-limiter/proto/product";
+
+package productpb;
+
+// protoc -I=proto --go_out=. --go_opt=module=github.com/shashankbiet/rate-limiter --go-grpc_out=require_unimplemented_servers=false:. --go-grpc_opt=module=github.com/shashankbiet/rate-limiter proto/**/*.proto
+service ProductService{
+    rpc GetProduct(ProductRequest) returns (ProductResponse);
+}
+
+message ProductRequest{
+    int64 id=1;
+}
+
+message ProductResponse{
+    Product product=1;
+}
+
+message Product{
+    int64 id = 1;
+    string name = 2;
+    string description = 3;
+    string brand = 4;
+    int32 sku = 5;
+    int32 price = 6;
+    float weight = 7;
+}
